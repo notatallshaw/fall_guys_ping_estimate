@@ -13,7 +13,7 @@ Instead of reading the "ping" value from the logs the script directly pings the 
 To install you must have Python 3.9+ and run the following command:
 
 ```
-python -m pip install git+https://github.com/notatallshaw/fall_guys_ping_estimate
+python -m pip install git+https://github.com/notatallshaw/fall_guys_ping_estimate.git
 ```
 
 ### Warning - Installing in a conda environment
