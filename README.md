@@ -26,7 +26,7 @@ conda install pywin32 psutil
 
 ## Run
 
-On the command line run the command:
+On the command line run:
 
 ```
 python -m fgpe
