@@ -7,7 +7,7 @@ if sys.version_info < (3, 9):
 setup(
     name='Fall Guys Ping Estimate',
     version='0.0.3',
-    description='Python Distribution Utilities',
+    description='Provides an overlay for estimating your current ping to the Fall Guys Servers',
     author='@notatallshaw',
     url='https://github.com/notatallshaw/fall_guys_ping_estimate',
     packages=['fgpe'],
