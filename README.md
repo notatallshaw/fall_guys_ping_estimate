@@ -18,7 +18,7 @@ python -m pip install git+https://github.com/notatallshaw/fall_guys_ping_estimat
 
 ### Warning - Installing in a conda environment
 
-If you are installing in a conda environmnet (Anaconda / Miniconda / Miniforge / Mambaforge) you must first install pywin32 for it to be compatible with the conda environment. I reccomend first running this in your conda environment before runing the above pip install:
+If you are installing in a conda environmnet (Anaconda / Miniconda / Miniforge / Mambaforge) you must first install pywin32 using conda instead of pip. I sugest running this in your conda environment before runing the above pip install:
 
 ```
 conda install pywin32 psutil
