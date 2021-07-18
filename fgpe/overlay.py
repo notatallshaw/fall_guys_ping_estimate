@@ -48,9 +48,3 @@ class Overlay:
         self.grid()
         self.root.after(0, self.update_label)
         self.root.mainloop()
-
-
-if __name__ == '__main__':
-    import random
-    overlay = Overlay(lambda: str(random.choice([1, 2, 3])))
-    overlay.run()
