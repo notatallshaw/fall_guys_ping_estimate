@@ -4,6 +4,7 @@ from enum import Enum
 from typing import Optional
 from statistics import mean
 
+
 class PingConnect(Enum):
     CONNECTED = 1
     NOT_CONNECTED = 2
@@ -50,8 +51,3 @@ class Pinger:
             return PingConnect.NOT_CONNECTED, None
         
         return PingConnect.CONNECTED, time
-
-
-if __name__ == '__main__':
-    foo = Pinger('74.201.228.234:8077')
-    print(foo.get_ping_time())
