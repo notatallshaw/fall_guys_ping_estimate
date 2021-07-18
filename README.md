@@ -2,7 +2,7 @@
 
 Reads the IP address of the Fall Guys Server from the player logs.
 
-Instead of reading the "ping" value from the logs the script directly pings the Fall Guys Server and presents the stats in an overlay
+Instead of reading the "ping" value from the logs the script directly pings the Fall Guys Server every 5 seconds and presents the stats in an overlay
 
 ## Screenshot
 
