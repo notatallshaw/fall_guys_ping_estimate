@@ -3,6 +3,7 @@ import subprocess
 from enum import Enum
 from typing import Optional
 from statistics import mean
+from collections import deque
 
 
 class PingConnect(Enum):
@@ -11,17 +12,18 @@ class PingConnect(Enum):
 
 
 class Stats:
-    def __init__(self):
-        self.pings = []
+    def __init__(self, avg_size=10):
+        self.avg_size = 10
+        self.pings = deque(maxlen=self.avg_size)
 
     def add(self, time: int):
         self.pings.append(time)
 
     def stats_string(self):
         return (f'Ping={self.pings[-1]}ms, '
-                f'Max Ping={max(self.pings)}ms, '
-                f'Min Ping={min(self.pings)}ms, '
-                f'Avg Ping={float(mean(self.pings)):.2f}ms')
+                f'Max={max(self.pings)}ms, '
+                f'Min={min(self.pings)}ms, '
+                f'Avg({self.avg_size})={float(mean(self.pings)):.2f}ms')
 
 
 class Pinger:
