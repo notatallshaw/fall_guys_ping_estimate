@@ -55,9 +55,9 @@ class FileReader:
             with open(self.log_location) as f:
                 f.seek(self.position)
                 for line in f:
-                    if '[FG_UnityInternetNetworkManager] Client Disconnected from Server' in line:
+                    if '[FG_UnityInternetNetworkManager] FG_NetworkManager shutdown completed!' in line:
                         ip_address = None
-                    if "[StateConnectToGame] We're connected to the server!" in line:
+                    elif "[StateConnectToGame] We're connected to the server!" in line:
                         ip_address = line.split()[-1]
 
                 # Record last position and IP address so we don't read file too many times
