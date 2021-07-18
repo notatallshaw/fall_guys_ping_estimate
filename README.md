@@ -16,14 +16,6 @@ To install you must have Python 3.9+ and run the following command:
 python -m pip install git+https://github.com/notatallshaw/fall_guys_ping_estimate.git
 ```
 
-### Warning - Installing in a conda environment
-
-If you are installing in a conda environmnet (Anaconda / Miniconda / Miniforge / Mambaforge) you must first install pywin32 using conda instead of pip. I sugest running this in your conda environment before runing the above pip install:
-
-```
-conda install pywin32 psutil
-```
-
 ## Run
 
 On the command line run:
@@ -34,5 +26,5 @@ python -m fgpe
 
 ## Shutdown
 
-Currently there is no shutdown functionality, you must close the command window you used to open Fall Guys Ping Estimate.
+Press the X at the leftmost section of the overlay
 
