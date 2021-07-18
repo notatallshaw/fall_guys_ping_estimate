@@ -73,10 +73,3 @@ class FileReader:
             self.current_server_state = ServerState.CONNECTED
         
         return self.current_server_state, self.current_ip_address
-
-
-if __name__ == '__main__':
-    filereader = FileReader()
-    while True:
-        print(filereader.get_ip())
-        time.sleep(3)
