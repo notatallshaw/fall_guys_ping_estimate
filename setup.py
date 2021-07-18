@@ -10,7 +10,7 @@ setup(
     description='Python Distribution Utilities',
     author='@notatallshaw',
     url='https://github.com/notatallshaw/fall_guys_ping_estimate',
-    packages=['fgpe']
+    packages=['fgpe'],
     install_requires=[
         'pywin32',
         'psutil'
