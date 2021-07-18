@@ -34,5 +34,5 @@ python -m fgpe
 
 ## Shutdown
 
-Currently there is not shutdown functionality, you must close the command window you used to open Fall Guys Ping Estimate.
+Currently there is no shutdown functionality, you must close the command window you used to open Fall Guys Ping Estimate.
 
