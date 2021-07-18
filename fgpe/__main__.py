@@ -1,4 +1,4 @@
-# Thirs Part Module
+# Third Party Modules
 import psutil
 
 # Local Modules
