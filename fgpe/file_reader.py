@@ -16,7 +16,8 @@ class FileReader:
         self.position = 0
         self.current_ip_address = None
         self.current_server_state = ServerState.NOT_CONNECTED
-        self.game_start_time = None
+        self.prev_log_mtime = None
+        self.prev_log_location = os.path.expandvars(r'%USERPROFILE%\AppData\LocalLow\Mediatonic\FallGuys_client\Player-prev.log')
         self.log_mtime = None
         self.log_location = os.path.expandvars(r'%USERPROFILE%\AppData\LocalLow\Mediatonic\FallGuys_client\Player.log')
 
@@ -31,16 +32,12 @@ class FileReader:
         return updated
 
     def file_changed(self):
-        with open(self.log_location) as f:
-            for line in f:
-                if '[GlobalGameStateClient].PreStart called at' in line:
-                    new_game_start_time = line.split()[-2]
-                    break
-            else: # If never broken
-                return None
-        
-        changed = self.game_start_time == new_game_start_time
-        self.game_start_time = new_game_start_time
+        if not os.path.exists(self.prev_log_location):
+            return False
+
+        new_prev_log_mtime = os.path.getmtime(self.prev_log_location)        
+        changed = self.prev_log_mtime == new_prev_log_mtime
+        self.prev_log_mtime = new_prev_log_mtime
         return changed
     
     def get_ip(self) -> tuple[ServerState, Optional[str]]:

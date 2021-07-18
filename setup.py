@@ -6,7 +6,7 @@ if sys.version_info < (3, 9):
 
 setup(
     name='Fall Guys Ping Estimate',
-    version='0.0.2',
+    version='0.0.3',
     description='Python Distribution Utilities',
     author='@notatallshaw',
     url='https://github.com/notatallshaw/fall_guys_ping_estimate',
