@@ -1,10 +1,26 @@
+# Standard Library
 import subprocess
 from enum import Enum
 from typing import Optional
+from statistics import mean
 
 class PingConnect(Enum):
     CONNECTED = 1
     NOT_CONNECTED = 2
+
+
+class Stats:
+    def __init__(self):
+        self.pings = []
+
+    def add(self, time: int):
+        self.pings.append(time)
+
+    def stats_string(self):
+        return (f'Ping={self.pings[-1]}ms, '
+                f'Max Ping={max(self.pings)}ms, '
+                f'Min Ping={min(self.pings)}ms, '
+                f'Avg Ping={float(mean(self.pings)):.2f}ms')
 
 
 class Pinger:
