@@ -28,10 +28,11 @@ conda install pywin32 psutil
 
 On the command line run:
 
+```
+python -m fgpe
+```
+
 ## Shutdown
 
 Currently there is not shutdown functionality, you must close the command window you used to open Fall Guys Ping Estimate.
 
-```
-python -m fgpe
-```
