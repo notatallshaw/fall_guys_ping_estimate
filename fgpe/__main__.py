@@ -1,3 +1,7 @@
+# Standard Library
+import os
+import time
+
 # Third Party Modules
 import psutil
 
@@ -14,11 +18,17 @@ class Events:
 
     def __call__(self):
         # Check if Fall Guys is Running
-        for process in psutil.process_iter():
-            if process.name() == 'FallGuys_client_game.exe':
-                break
-        else:
+        log_age = time.time() - os.path.getmtime(self.reader.log_location)
+        if log_age > 3_600:
             return 'Fall Guys Game is not Running'
+        
+        if log_age > 5:
+            # No update log so check if process is running
+            for process in psutil.process_iter():
+                if process.name() == 'FallGuys_client_game.exe':
+                    break
+            else:
+                return 'Fall Guys Game is not Running'
 
         # Check if connected to Fall Guys Server
         status, ip_port =  self.reader.get_ip()
