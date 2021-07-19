@@ -4,12 +4,12 @@ import psutil
 # Local Modules
 from .overlay import Overlay
 from .pinger import Pinger, Stats, PingConnect
-from .file_reader import FileReader, ServerState
+from .log_reader import LogReader, ServerState
 
 
 class Events:
     def __init__(self):
-        self.reader = FileReader()
+        self.reader = LogReader()
         self.stats = Stats()
 
     def __call__(self):

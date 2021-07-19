@@ -17,8 +17,8 @@ class Overlay:
             self.root,
             text=' X |',
             font=('Consolas', '14'),
-            fg='green',
-            bg='black'
+            fg='green3',
+            bg='grey19'
         )
         self.close_label.bind("<Button-1>", lambda _: sys.exit())
         self.close_label.grid(row=0, column=0)
@@ -29,14 +29,14 @@ class Overlay:
             self.root,
             textvariable=self.ping_text,
             font=('Consolas', '14'),
-            fg='green',
-            bg='black'
+            fg='green3',
+            bg='grey19'
         )
         self.ping_label.grid(row=0, column=1)
 
         # Set Window Geometery
         self.root.overrideredirect(True)
-        self.root.geometry("+10+10")
+        self.root.geometry("+5+5")
         self.root.lift()
         self.root.wm_attributes("-topmost", True)
 
