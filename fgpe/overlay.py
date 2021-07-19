@@ -12,7 +12,7 @@ class Overlay:
         self.update_frequency_ms = update_frequency_ms
         self.root = tk.Tk()
 
-        # Set Closed Label
+        # Set up Close Label
         self.close_label = tk.Label(
             self.root,
             text=' X |',
@@ -34,16 +34,16 @@ class Overlay:
         )
         self.ping_label.grid(row=0, column=1)
 
-        # Set Window Geometery
+        # Define Window Geometery
         self.root.overrideredirect(True)
         self.root.geometry("+5+5")
         self.root.lift()
         self.root.wm_attributes("-topmost", True)
 
-    def update_label(self):
+    def update_label(self) -> None:
         self.ping_text.set(self.get_new_text_callback())
         self.root.after(self.update_frequency_ms, self.update_label)
 
-    def run(self):
+    def run(self) -> None:
         self.root.after(0, self.update_label)
         self.root.mainloop()

@@ -16,7 +16,7 @@ class Events:
         self.reader = LogReader()
         self.stats = Stats()
 
-    def __call__(self):
+    def __call__(self) -> str:
         # Check if Fall Guys is Running
         log_age = time.time() - os.path.getmtime(self.reader.log_location)
         if log_age > 3_600:
@@ -52,6 +52,7 @@ def main():
     events = Events()
     overlay = Overlay(events)
     overlay.run()
+
 
 if __name__ == '__main__':
     main()
