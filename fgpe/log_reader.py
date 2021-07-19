@@ -24,13 +24,13 @@ class LogReader:
         if not os.path.exists(self.log_location):
             raise ValueError(f'No log file at: {self.log_location}')
     
-    def file_updated(self) -> bool:
+    def log_updated(self) -> bool:
         new_log_mtime = os.path.getmtime(self.log_location)
         updated = not (self.log_mtime == new_log_mtime)
         self.log_mtime = new_log_mtime
         return updated
 
-    def file_changed(self) -> bool:
+    def log_changed(self) -> bool:
         if not os.path.exists(self.prev_log_location):
             return False
 
@@ -55,8 +55,8 @@ class LogReader:
 
     
     def get_ip(self) -> tuple[ServerState, Optional[str]]:
-        if self.file_updated():
-            if self.file_changed():
+        if self.log_updated():
+            if self.log_changed():
                 self.position = 0
             self._update_ip_from_log_file()
         
