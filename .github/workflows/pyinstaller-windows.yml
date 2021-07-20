@@ -38,4 +38,4 @@ jobs:
       - name: download binary from build job
         uses: actions/download-artifact@v2
         with:
-          name: potatoalert
+          name: run_fgpe
