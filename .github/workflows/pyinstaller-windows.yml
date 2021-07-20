@@ -3,6 +3,8 @@ name: Package exe with PyInstaller - Windows
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -36,4 +38,4 @@ jobs:
       - name: download binary from build job
         uses: actions/download-artifact@v2
         with:
-          name: potatoalert
+          name: run_fgpe
