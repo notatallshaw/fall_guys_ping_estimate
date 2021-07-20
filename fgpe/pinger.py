@@ -43,6 +43,7 @@ class Pinger:
     def get_ping_time(self) -> tuple[PingConnect, Optional[int]]:
         response = subprocess.run(
             ['ping', '-n', '1', '-w', '1000', self.ip_address],
+            stdin=subprocess.PIPE,  # Required for PyInstaller --noconsole
             capture_output=True,
             encoding='ascii'
             )
