@@ -12,6 +12,9 @@ from .log_reader import LogReader, ServerState
 
 
 class Events:
+    """
+    This the main logic that is called by the GUIs event loop
+    """
     def __init__(self):
         self.reader = LogReader()
         self.stats = Stats()

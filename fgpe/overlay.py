@@ -5,6 +5,10 @@ from typing import Callable
 
 
 class Overlay:
+    """
+    Creates an overlay window using tkinter
+    Uses the "-topmost" property to always stay on top of other Windows
+    """
     def __init__(self,
                  get_new_text_callback: Callable[[], str],
                  update_frequency_ms: int = 5_000):

@@ -27,6 +27,12 @@ class Stats:
 
 
 class Pinger:
+    """
+    Calls a subprocess to run the ping command and then parses the results
+
+    Unforutnatly this can't in pure Python without admin privilages
+    As a normal process requires admin for an ICMP request (ping) 
+    """
     def __init__(self, ip_address: str):
         if ':' in ip_address:
             self.ip_address, self.port = ip_address.split(':')
