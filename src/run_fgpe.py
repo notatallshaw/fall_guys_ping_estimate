@@ -1,0 +1,2 @@
+import fgpe
+fgpe.main()
