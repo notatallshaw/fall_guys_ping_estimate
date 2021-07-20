@@ -8,7 +8,15 @@ This is different from other Fall Guys stats collectors which read the ping from
 
 ![Fall Guys Ping Estimate](fall_guys_ping_estimator.png "Fall Guys Ping Estimate")
 
-## Install
+## Download and Run Executable
+
+If you want a one click executable file, no need to worry about the source code or anything, download and run here: https://github.com/notatallshaw/fall_guys_ping_estimate/releases/download/v0.1.3/run_fgpe.exe
+
+## Shutdown
+
+Press the X at the leftmost section of the overlay
+
+## Install from Source Code
 
 To install you must have Python 3.9+ and run the following command:
 
@@ -16,7 +24,7 @@ To install you must have Python 3.9+ and run the following command:
 python -m pip install git+https://github.com/notatallshaw/fall_guys_ping_estimate.git
 ```
 
-## Run
+## Run from Source code
 
 On the command line run:
 
@@ -24,7 +32,18 @@ On the command line run:
 python -m fgpe
 ```
 
-## Shutdown
+## Build Executable
 
-Press the X at the leftmost section of the overlay
+Checkout the source code from git, have Python 3.9+ installed.
 
+Install Pyinstaller:
+
+```
+python -m pip install pyinstaller
+```
+
+Build the installer (will create an exe at dist\run_fgpe.exe:
+
+```
+pyinstaller run_fgpe.py --noconsole --onefile
+```
