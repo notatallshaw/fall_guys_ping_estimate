@@ -3,6 +3,8 @@ name: Package exe with PyInstaller - Windows
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -18,22 +20,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        python -m pip install pyinstaller
-        python -m pip install .
+        pip install pyinstaller
     - name: build with pyinstaller
       run: |
         pyinstaller --noconsole --onefile run_fgpe.py
     - uses: actions/upload-artifact@v2
       with:
-        name: run_fgpe
-        path: dist/run_fgpe.exe
-
-  create_release_draft:
-    name: create realease draft
-    needs: build
-    runs-on: windows-latest
-    steps:
-      - name: download binary from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: potatoalert
+        name: run_fgpe.exe
+        path: dist
