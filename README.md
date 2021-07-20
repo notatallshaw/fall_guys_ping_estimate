@@ -42,7 +42,7 @@ Install Pyinstaller:
 python -m pip install pyinstaller
 ```
 
-Build the installer (will create an exe at dist\run_fgpe.exe:
+Build the installer (will create an exe at dist\run_fgpe.exe):
 
 ```
 pyinstaller run_fgpe.py --noconsole --onefile
