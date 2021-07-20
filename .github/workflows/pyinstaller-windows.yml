@@ -26,5 +26,5 @@ jobs:
         pyinstaller --noconsole --onefile run_fgpe.py
     - uses: actions/upload-artifact@v2
       with:
-        name: name-of-artifact
-        path: src/dist/windows
+        name: run_fgpe.exe
+        path: dist
