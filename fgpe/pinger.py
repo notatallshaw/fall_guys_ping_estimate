@@ -45,7 +45,8 @@ class Pinger:
             ['ping', '-n', '1', '-w', '1000', self.ip_address],
             stdin=subprocess.PIPE,  # Required for PyInstaller --noconsole
             capture_output=True,
-            encoding='ascii'
+            encoding='ascii',
+            creationflags=subprocess.CREATE_NO_WINDOW  # Required for noflickering in exe
             )
         if response.returncode != 0:
             return PingConnect.NOT_CONNECTED, None
