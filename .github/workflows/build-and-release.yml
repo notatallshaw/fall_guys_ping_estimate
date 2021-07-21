@@ -22,7 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python -m pip install pyinstaller
-        python -m pip .
+        python -m pip install .
 
     - name: build with pyinstaller
       run: pyinstaller --noconsole --onefile run_fgpe.py
