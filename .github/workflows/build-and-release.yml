@@ -27,7 +27,8 @@ jobs:
     - name: build with pyinstaller
       run: pyinstaller --noconsole --onefile run_fgpe.py
 
-    - uses: "marvinpinto/action-automatic-releases@latest"
+    - name: Create Pre-Release
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
