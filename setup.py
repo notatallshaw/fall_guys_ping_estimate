@@ -6,7 +6,7 @@ if sys.version_info < (3, 9):
 
 setup(
     name='Fall Guys Ping Estimate',
-    version='0.2.0',
+    version='0.3.0',
     description='Provides an overlay which gives an estimate of your current ping to the Fall Guys Servers',
     author='@notatallshaw',
     url='https://github.com/notatallshaw/fall_guys_ping_estimate',
