@@ -1,7 +1,7 @@
 # Standard Library
 import sys
 import tkinter as tk
-from typing import Callable
+from typing import Callable, Any
 
 
 class Overlay:
@@ -10,8 +10,10 @@ class Overlay:
     Uses the "-topmost" property to always stay on top of other Windows
     """
     def __init__(self,
+                 close_callback: Callable[[Any], None],
                  get_new_text_callback: Callable[[], str],
                  update_frequency_ms: int = 5_000):
+        self.close_callback = close_callback
         self.get_new_text_callback = get_new_text_callback
         self.update_frequency_ms = update_frequency_ms
         self.root = tk.Tk()
@@ -24,7 +26,7 @@ class Overlay:
             fg='green3',
             bg='grey19'
         )
-        self.close_label.bind("<Button-1>", lambda _: sys.exit())
+        self.close_label.bind("<Button-1>", close_callback)
         self.close_label.grid(row=0, column=0)
 
         # Set up Ping Label
