@@ -36,6 +36,12 @@ python -m fgpe
 
 Checkout the source code from git, have Python 3.9+ installed.
 
+Install the package in the git repository:
+
+```
+python -m pip install .
+```
+
 Install Pyinstaller:
 
 ```
