@@ -1,5 +1,4 @@
 # Standard Library
-import sys
 import tkinter as tk
 from typing import Callable, Any
 

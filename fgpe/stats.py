@@ -41,7 +41,7 @@ class Stats:
         max_ping = max(self.recent_pings[connection_details])
         min_ping = min(self.recent_pings[connection_details])
         rolling_average_ping = float(mean(self.recent_pings[connection_details][-self.avg_size:]))
-        return f'Ping={current_ping}, Min={min_ping}, Max={max_ping}, Avg({self.avg_size})={rolling_average_ping:.2f}'
+        return f'Ping={current_ping}ms, Min={min_ping}ms, Max={max_ping}ms, Avg({self.avg_size})={rolling_average_ping:.2f}ms'
     
     def end_session(self, connection_details: Optional[ConnectionDetails]) -> None:
         if connection_details is None or connection_details.ip == '0.0.0.0':

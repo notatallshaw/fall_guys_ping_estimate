@@ -1,0 +1,63 @@
+Fall Guys Region,IP Network,Location,Provider
+Asia East,129.227.152.0/22,Hong Kong,Zenlayer
+Asia East,43.251.182.192/26,Taipei,Psychz Networks
+Asia East,172.107.246.0/24,Taipei,Psychz Networks
+Asia South,72.5.161.0/24,Singapore,Internap Corporation
+Asia South,107.6.118.0/23,Singapore,Voxel Hosting
+Australiia,137.59.254.64/26,Sydney,Performive
+Australiia,137.59.254.64/27,Sydney,Performive
+Europe,198.20.114.0/23,Amsterdam,SingleHop LLC
+Europe,198.20.123.64/26,Amsterdam,SingleHop LLC
+Europe,107.6.143.0/24,Amsterdam,SingleHop LLC
+Europe,107.6.152.0/23,Amsterdam,SingleHop LLC
+Europe,107.6.174.0/24,Amsterdam,SingleHop LLC
+Europe,198.20.119.0/24,Amsterdam,SingleHop LLC
+Europe,107.6.175.0/24,Amsterdam,SingleHop LLC
+Europe,107.6.176.0/21,Amsterdam,SingleHop LLC
+Europe,78.129.201.0/24,UK,Iomart Cloud Services
+Europe,188.227.186.0/24,UK,Iomart Cloud Services
+Europe,109.169.0.0/18,UK,Iomart Cloud Services
+Europe,78.129.128.0/17,UK,Iomart Cloud Services
+Europe,88.150.230.160/28,UK,Redstation Limited
+Europe,88.150.230.184/29,London,Redstation Limited
+Europe,212.78.94.0/24,UK,UK2.NET
+Europe,88.202.231.128/27,UK,UK2.NET
+Europe,134.119.220.0/24,Strasbourg,Host Europe GmbH
+Europe,134.119.189.0/24,Strasbourg,Host Europe GmbH
+Europe,92.204.170.0/24,Strasbourg,Host Europe GmbH
+Europe,92.204.171.144/28,Strasbourg,Host Europe GmbH
+Europe,92.204.171.0/25,Strasbourg,Host Europe GmbH
+India/Middle East,129.227.200.0/22,Hong Kong,Zenlayer
+India/Middle East,129.227.16.0/21,Mumbai,Zenlayer
+India/Middle East,129.227.28.0/22,Mumbai,Zenlayer
+India/Middle East,34.93.32.0/19,Mumbai,Google Cloud
+Korea,129.227.0.0/20,Seoul,Zenlayer
+Korea,129.227.0.0/21,Seoul,Zenlayer
+Korea,129.227.0.0/22,Seoul,Zenlayer
+Korea,129.227.0.0/23,Seoul,Zenlayer
+South America,172.107.193.0/24,Brazil,Psychz Networks
+South America,35.198.0.0/19,São Paulo,Google Cloud
+South America,35.198.34.0/24,São Paulo,Google Cloud
+US Central,34.69.0.0/18,Iowa,Google Cloud
+US Central,34.67.0.0/18,Iowa,Google Cloud
+US Central,45.35.34.0/24,Dallas,Psychz Networks
+US Central,104.217.248.0/22,Dallas,Psychz Networks
+US Central,63.251.238.0/23,Atlanta,Voxel Hosting
+US Central,63.251.240.0/22,Atlanta,Voxel Hosting
+US East,173.244.217.128/25,New York,Hosting Services Inc
+US East,34.138.160.0/19,South Carolina,Google Cloud
+US East,34.138.64.0/18,South Carolina,Google Cloud
+US East,34.139.128.0/19,South Carolina,Google Cloud
+US East,34.139.192.0/18,South Carolina,Google Cloud
+US East,34.139.32.0/19,South Carolina,Google Cloud
+US East,34.73.72.0/21,South Carolina,Google Cloud
+US East,35.231.224.0/19,South Carolina,Google Cloud
+US East,173.233.152.0/22,Washington D.C,Servers-com
+US East,74.201.228.0/23,New York,Voxel Hosting
+US East,107.150.146.0/23,New York,Voxel Hosting
+US West,199.116.114.0/24,Los Angeles,Performive
+US West,35.227.160.0/19,Oregon,Google Cloud
+US West,209.191.164.0/24,San Jose,Voxel Hosting
+US West,209.191.164.0/25,San Jose,Voxel Hosting
+US West,209.191.164.0/26,San Jose,Voxel Hosting
+US West,209.191.164.0/27,San Jose,Voxel Hosting
