@@ -71,5 +71,12 @@ python -m pip install pyinstaller
 Build the installer (will create an exe at dist\run_fgpe.exe):
 
 ```
-pyinstaller installer\run_fgpe.py --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile
+pyinstaller installer\run_fgpe.py --clean --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile --icon installer\fall_guy.ico
 ```
+
+
+## Icon File
+
+The excellent icon file for the executable was created by "Foxpool": https://pixabay.com/users/foxpool-19974991/
+
+It is listed as "Free for commercial use. No attribution required" and is sourced at: https://pixabay.com/illustrations/fall-guys-fall-guy-guy-6022164/
