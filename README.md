@@ -71,5 +71,5 @@ python -m pip install pyinstaller
 Build the installer (will create an exe at dist\run_fgpe.exe):
 
 ```
-pyinstaller run_fgpe.py --noconsole --onefile
+pyinstaller installer\run_fgpe.py --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile
 ```
