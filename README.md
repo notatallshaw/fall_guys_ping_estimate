@@ -24,7 +24,7 @@ In here you will find a file named `stats.csv` which you can open with Excel or 
 
 ## Report Unknown Region / Location
 
-Because the region and location is built manually there will likely be many ip addresses where these is an known region and location. You will see something like this:
+Because the region and location is built manually there will likely be many ip addresses where the region and location are not known. You will see something like this:
 
 ![Fall Guys Ping Estimate Unknown IP](fall_guys_ping_estimator_unknown_ip.png "Fall Guys Ping Estimate Unknown IP")
 
