@@ -10,6 +10,7 @@ import psutil
 # Local Modules
 from .stats import Stats
 from .overlay import Overlay
+from .locations import LocationLookup
 from .pinger import Pinger, PingConnect
 from .log_reader import LogReader, ServerState, ConnectionDetails
 
@@ -21,6 +22,7 @@ class Events:
     def __init__(self):
         self.reader = LogReader()
         self.stats = Stats()
+        self.locations = LocationLookup()
         self.current_connection: Optional[ConnectionDetails] = None
 
     def close(self, _) -> None:
@@ -48,7 +50,7 @@ class Events:
         if status != ServerState.CONNECTED:
             self.stats.end_session(self.current_connection)
             self.current_connection = None
-            return f'Not Connected to Fall Guys Server'
+            return 'Not Connected to Fall Guys Server'
         
         # Set Current Connection
         self.current_connection = connection
@@ -57,11 +59,12 @@ class Events:
         pinger = Pinger(connection.ip)
         status, ping_time = pinger.get_ping_time()
         if status != PingConnect.CONNECTED:
-            return f'Could not reach Fall Guys IP: {connection}'
+            return f'Could not reach Fall Guys IP: {connection.ip}'
 
-        # Update Stats and Report
+        # Update Stats, lookup location, and report
         self.stats.add(connection, ping_time)
-        return f'IP={pinger.ip_address}, {self.stats.stats_string(connection)}'
+        location = self.locations.lookup(pinger.ip_address)
+        return f'Region={location.region}, Location={location.location}, {self.stats.stats_string(connection)}'
 
 
 def main():
