@@ -10,7 +10,7 @@ This is different from other Fall Guys stats collectors which read the ping from
 
 ## Download and Run Executable
 
-If you want a one click executable file, no need to worry about the source code or anything, download and run here (first time you download Windows Defender will need ~10 seconds to scan the file and you may get a warning where you need to click "More info" -> "Run Anyway"): https://github.com/notatallshaw/fall_guys_ping_estimate/releases/download/v0.5.0/run_fgpe.exe
+If you want a one click executable file, no need to worry about the source code or anything, download and run here (first time you download Windows Defender will need ~10 seconds to scan the file and you may get a warning where you need to click "More info" -> "Run Anyway"): https://github.com/notatallshaw/fall_guys_ping_estimate/releases/download/v0.5.1/run_fgpe.exe
 
 ## Shutdown
 
