@@ -10,7 +10,7 @@ This is different from other Fall Guys stats collectors which read the ping from
 
 ## Download and Run Executable
 
-If you want a one click executable file, no need to worry about the source code or anything, download and run here (first time you download Windows Defender will need ~10 seconds to scan the file and you may get a warning where you need to click "More info" -> "Run Anyway"): https://github.com/notatallshaw/fall_guys_ping_estimate/releases/download/v0.5.1/run_fgpe.exe
+If you want a one click executable file, no need to worry about the source code or anything, download and run here (first time you download Windows Defender will need ~10 seconds to scan the file and you may get a warning where you need to click "More info" -> "Run Anyway"): https://github.com/notatallshaw/fall_guys_ping_estimate/releases/download/v0.5.2/run_fgpe.exe
 
 ## Shutdown
 
@@ -24,11 +24,9 @@ In here you will find a file named `stats.csv` which you can open with Excel or 
 
 ## Report Unknown Region / Location
 
-Because the region and location is built manually there will likely be many ip addresses where the region and location are not known. You will see something like this:
+Because the region and location is built manually there will likely be many ip addresses where the region and location are not known. When this happens you will see the IP address displayed instead of the region and locations.
 
-![Fall Guys Ping Estimate Unknown IP](fall_guys_ping_estimator_unknown_ip.png "Fall Guys Ping Estimate Unknown IP")
-
-Please take the following steps:
+To report this take the following steps:
 
 1. Open a New Issue: https://github.com/notatallshaw/fall_guys_ping_estimate/issues/new
 2. Put in what details you can, especiailly if you know your Fall Guys Region
