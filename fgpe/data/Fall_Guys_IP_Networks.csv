@@ -42,9 +42,15 @@ US Central,34.69.0.0/18,Iowa,Google Cloud
 US Central,34.67.0.0/18,Iowa,Google Cloud
 US Central,45.35.34.0/24,Dallas,Psychz Networks
 US Central,104.217.248.0/22,Dallas,Psychz Networks
+US Central,45.34.0.0/15,Dallas,Psychz Networks
 US Central,63.251.238.0/23,Atlanta,Voxel Hosting
 US Central,63.251.240.0/22,Atlanta,Voxel Hosting
+US Central,206.191.128.0/18,Atlanta,Internap Corporation
 US East,173.244.217.128/25,New York,Hosting Services Inc
+US East,209.95.32.0/19,New York,Hosting Services Inc
+US East,107.182.224.0/20,New York,Hosting Services Inc
+US East,206.191.128.0/18,New York,Hosting Services Inc
+US East,209.95.32.0/19,New York,Hosting Services Inc
 US East,34.138.160.0/19,South Carolina,Google Cloud
 US East,34.138.64.0/18,South Carolina,Google Cloud
 US East,34.139.128.0/19,South Carolina,Google Cloud
@@ -56,6 +62,13 @@ US East,34.72.0.0/14,South Carolina,Google Cloud
 US East,35.229.112.0/20,South Carolina,Google Cloud
 US East,104.196.216.0/21,South Carolina,Google Cloud
 US East,34.139.64.0/19,South Carolina,Google Cloud
+US East,104.196.0.0/14,South Carolina,Google Cloud
+US East,34.128.0.0/10,South Carolina,Google Cloud
+US East,35.224.0.0/12,South Carolina,Google Cloud
+US East,35.240.0.0/13,South Carolina,Google Cloud
+US East,35.208.0.0/12,South Carolina,Google Cloud
+US East,35.208.0.0/12,South Carolina,Google Cloud
+US East,34.64.0.0/10,South Carolina,Google Cloud
 US East,173.233.152.0/22,Washington D.C,Servers-com
 US East,74.201.228.0/23,New York,Voxel Hosting
 US East,107.150.146.0/23,New York,Voxel Hosting

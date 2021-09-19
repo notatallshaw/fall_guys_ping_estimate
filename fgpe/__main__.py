@@ -10,8 +10,8 @@ import psutil
 # Local Modules
 from .stats import Stats
 from .overlay import Overlay
-from .locations import LocationLookup
 from .pinger import Pinger, PingConnect
+from .locations import LocationLookup, UNKNOWN_LOCATION
 from .log_reader import LogReader, ServerState, ConnectionDetails
 
 
@@ -64,6 +64,8 @@ class Events:
         # Update Stats, lookup location, and report
         self.stats.add(connection, ping_time)
         location = self.locations.lookup(pinger.ip_address)
+        if location == UNKNOWN_LOCATION:
+            return f'IP={pinger.ip_address}, {self.stats.stats_string(connection)}'
         return f'Region={location.region}, Location={location.location}, {self.stats.stats_string(connection)}'
 
 
