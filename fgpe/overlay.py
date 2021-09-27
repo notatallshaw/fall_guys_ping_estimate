@@ -10,9 +10,11 @@ class Overlay:
     """
     def __init__(self,
                  close_callback: Callable[[Any], None],
+                 initial_text: str,
                  get_new_text_callback: Callable[[], str],
                  update_frequency_ms: int = 5_000):
         self.close_callback = close_callback
+        self.initial_text = initial_text
         self.get_new_text_callback = get_new_text_callback
         self.update_frequency_ms = update_frequency_ms
         self.root = tk.Tk()
@@ -50,5 +52,6 @@ class Overlay:
         self.root.after(self.update_frequency_ms, self.update_label)
 
     def run(self) -> None:
-        self.root.after(0, self.update_label)
+        self.ping_text.set(self.initial_text)
+        self.root.after(500, self.update_label)
         self.root.mainloop()
