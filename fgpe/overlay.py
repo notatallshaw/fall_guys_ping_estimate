@@ -11,12 +11,12 @@ class Overlay:
     def __init__(self,
                  close_callback: Callable[[Any], None],
                  initial_text: str,
-                 get_new_text_callback: Callable[[], str],
-                 update_frequency_ms: int = 5_000):
+                 initial_delay: int,
+                 get_new_text_callback: Callable[[], tuple[int, str]]):
         self.close_callback = close_callback
         self.initial_text = initial_text
+        self.initial_delay = initial_delay
         self.get_new_text_callback = get_new_text_callback
-        self.update_frequency_ms = update_frequency_ms
         self.root = tk.Tk()
 
         # Set up Close Label
@@ -48,10 +48,11 @@ class Overlay:
         self.root.wm_attributes("-topmost", True)
 
     def update_label(self) -> None:
-        self.ping_text.set(self.get_new_text_callback())
-        self.root.after(self.update_frequency_ms, self.update_label)
+        wait_time, update_text = self.get_new_text_callback()
+        self.ping_text.set(update_text)
+        self.root.after(wait_time, self.update_label)
 
     def run(self) -> None:
         self.ping_text.set(self.initial_text)
-        self.root.after(500, self.update_label)
+        self.root.after(self.initial_delay, self.update_label)
         self.root.mainloop()

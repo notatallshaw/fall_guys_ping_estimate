@@ -28,7 +28,7 @@ class LocationLookup:
         """
         # importlib.resources.files returns a file type
         self._backup_csv_file: Path = importlib.resources.files('fgpe') / 'data' / 'Fall_Guys_IP_Networks.csv'
-        self.csv_file_path = Path(expandvars(r'%APPDATA%\fgpe\Fall_Guys_IP_Networks.csv'))
+        self.download_csv_file_path = Path(expandvars(r'%APPDATA%\fgpe\Fall_Guys_IP_Networks.csv'))
         self._ip_network_lookup = None
 
         # Check unknown IP address CSV exists
@@ -38,9 +38,9 @@ class LocationLookup:
             self.unknown_ip_path.write_text('Time,IP Address\n')
 
     @property
-    def csv_file(self) -> Path:
-        if self.csv_file_path.exists():
-            return self.csv_file_path
+    def csv_file_path(self) -> Path:
+        if self.download_csv_file_path.exists():
+            return self.download_csv_file_path
         return self._backup_csv_file
 
     @property
@@ -49,7 +49,7 @@ class LocationLookup:
             return self._ip_network_lookup
 
         ip_network_lookup = {}
-        with open(self.csv_file) as f:
+        with open(self.csv_file_path) as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ip_network_lookup[ip_network(row['IP Network'])] = \
