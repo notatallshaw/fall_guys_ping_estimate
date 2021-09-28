@@ -16,6 +16,9 @@ Europe,107.6.175.0/24,Amsterdam,SingleHop LLC
 Europe,107.6.176.0/21,Amsterdam,SingleHop LLC
 Europe,198.20.64.0/18,Amsterdam,SingleHop LLC
 Europe,198.20.96.0/20,Amsterdam,SingleHop LLC
+Europe,107.6.128.0/18,Amsterdam,SingleHop LLC
+Europe,107.6.152.0/22,Amsterdam,SingleHop LLC
+Europe,23.109.0.0/16,Amsterdam,Servers.com
 Europe,78.129.201.0/24,UK,Iomart Cloud Services
 Europe,188.227.186.0/24,UK,Iomart Cloud Services
 Europe,109.169.0.0/18,UK,Iomart Cloud Services
@@ -26,10 +29,7 @@ Europe,212.78.94.0/24,UK,UK2.NET
 Europe,88.202.231.128/27,UK,UK2.NET
 Europe,134.119.220.0/24,Strasbourg,Host Europe GmbH
 Europe,134.119.189.0/24,Strasbourg,Host Europe GmbH
-Europe,92.204.170.0/24,Strasbourg,Host Europe GmbH
-Europe,92.204.171.144/28,Strasbourg,Host Europe GmbH
-Europe,92.204.171.0/25,Strasbourg,Host Europe GmbH
-Europe,134.119.195.121,Strasbourg,Host Europe GmbH
+Europe,92.0.0.0/8,Strasbourg,Host Europe GmbH
 India/Middle East,129.227.200.0/22,Hong Kong,Zenlayer
 India/Middle East,129.227.16.0/21,Mumbai,Zenlayer
 India/Middle East,129.227.28.0/22,Mumbai,Zenlayer
