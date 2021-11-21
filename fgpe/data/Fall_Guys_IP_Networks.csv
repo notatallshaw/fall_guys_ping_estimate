@@ -29,7 +29,10 @@ Europe,212.78.94.0/24,UK,UK2.NET
 Europe,88.202.231.128/27,UK,UK2.NET
 Europe,134.119.220.0/24,Strasbourg,Host Europe GmbH
 Europe,134.119.189.0/24,Strasbourg,Host Europe GmbH
+Europe,134.119.192.0/19,Strasbourg,Host Europe GmbH
+Europe,151.106.48.0/20,Strasbourg,Host Europe GmbH
 Europe,92.0.0.0/8,Strasbourg,Host Europe GmbH
+Europe,35.190.192.0/19,Brussels,Google Cloud
 India/Middle East,129.227.200.0/22,Hong Kong,Zenlayer
 India/Middle East,129.227.16.0/21,Mumbai,Zenlayer
 India/Middle East,129.227.28.0/22,Mumbai,Zenlayer
@@ -52,7 +55,6 @@ US Central,206.191.128.0/18,Atlanta,Internap Corporation
 US East,173.244.217.128/25,New York,Hosting Services Inc
 US East,209.95.32.0/19,New York,Hosting Services Inc
 US East,107.182.224.0/20,New York,Hosting Services Inc
-US East,206.191.128.0/18,New York,Hosting Services Inc
 US East,209.95.32.0/19,New York,Hosting Services Inc
 US East,34.138.160.0/19,South Carolina,Google Cloud
 US East,34.138.64.0/18,South Carolina,Google Cloud
