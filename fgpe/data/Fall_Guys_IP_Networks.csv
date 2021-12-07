@@ -43,6 +43,7 @@ Korea,129.227.0.0/21,Seoul,Zenlayer
 Korea,129.227.0.0/22,Seoul,Zenlayer
 Korea,129.227.0.0/23,Seoul,Zenlayer
 South America,172.107.193.0/24,Brazil,Psychz Networks
+South America,172.106.0.0/15,São Paulo,Psychz Networks
 South America,35.198.0.0/19,São Paulo,Google Cloud
 South America,35.198.34.0/24,São Paulo,Google Cloud
 US Central,34.69.0.0/18,Iowa,Google Cloud
