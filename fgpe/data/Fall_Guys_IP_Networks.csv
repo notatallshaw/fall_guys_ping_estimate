@@ -1,5 +1,6 @@
 Fall Guys Region,IP Network,Location,Provider
 Asia East,129.227.152.0/22,Hong Kong,Zenlayer
+Asia East,129.227.0.0/16,Hong Kong,Zenlayer
 Asia East,43.251.182.192/26,Taipei,Psychz Networks
 Asia East,172.107.246.0/24,Taipei,Psychz Networks
 Asia South,72.5.161.0/24,Singapore,Internap Corporation
@@ -79,7 +80,10 @@ US East,74.201.228.0/23,New York,Voxel Hosting
 US East,107.150.146.0/23,New York,Voxel Hosting
 US East,206.191.152.0/21,New York,Voxel Hosting
 US West,199.116.114.0/24,Los Angeles,Performive
+US West,104.149.0.0/16,Los Angeles,Psychz Networks
 US West,35.227.160.0/19,Oregon,Google Cloud
+US West,35.184.0.0/13,Oregon,Google Cloud
+US West,35.192.0.0/12,Oregon,Google Cloud
 US West,209.191.164.0/24,San Jose,Voxel Hosting
 US West,209.191.164.0/25,San Jose,Voxel Hosting
 US West,209.191.164.0/26,San Jose,Voxel Hosting
