@@ -65,7 +65,9 @@ class Events:
 
             # Get new file
             response = session.get(IP_URL, timeout=10)
-            response.raise_for_status()
+            if response.status_code != 200:
+                return
+
             with TemporaryDirectory() as temp_dir:
                 temp_file = Path(temp_dir) / self.locations.download_csv_file_path.name
                 temp_file.write_bytes(response.content)

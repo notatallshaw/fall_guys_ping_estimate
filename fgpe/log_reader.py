@@ -50,7 +50,7 @@ class LogReader:
         ip_address = self.current_ip
         port = self.current_port
 
-        with open(self.log_location) as f:
+        with open(self.log_location, errors='ignore') as f:
             f.seek(self.position)
             for line in f:
                 if '[FG_UnityInternetNetworkManager] FG_NetworkManager shutdown completed!' in line:
