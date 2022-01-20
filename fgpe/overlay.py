@@ -41,7 +41,7 @@ class Overlay:
         )
         self.ping_label.grid(row=0, column=1)
 
-        # Define Window Geometery
+        # Define Window Geometry
         self.root.overrideredirect(True)
         self.root.geometry("+5+5")
         self.root.lift()
