@@ -26,7 +26,9 @@ jobs:
         python -m pip install .
 
     - name: build with pyinstaller
-      run: PYTHONOPTIMIZE=2 pyinstaller installer\run_fgpe.py --clean --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile --icon installer\fall_guy.ico
+      run: pyinstaller installer\run_fgpe.py --clean --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile --icon installer\fall_guy.ico
+      env:
+        PYTHONOPTIMIZE: 2
 
     - name: Create Pre-Release
       uses: "marvinpinto/action-automatic-releases@latest"
