@@ -8,8 +8,15 @@ logger = logging.getLogger(__name__)
 
 
 def report_callback_exception(exc_type, val, tb):
+    if issubclass(exc_type, GracefulExit):
+        sys.exit(0)
+
     logger.error('Exception occured, exiting:', exc_info=(exc_type, val, tb))
     sys.exit(1)
+
+
+class GracefulExit(Exception):
+    "Allows callbacks to gracefully exit without logging error"
 
 
 class Overlay:

@@ -19,8 +19,8 @@ from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
 # Local Modules
 from .stats import Stats
-from .overlay import Overlay
 from .pinger import Pinger, PingConnect
+from .overlay import Overlay, GracefulExit
 from .locations import LocationLookup, UNKNOWN_LOCATION
 from .log_reader import LogReader, ServerState, ConnectionDetails
 
@@ -32,16 +32,19 @@ IP_URL = 'https://raw.githubusercontent.com/notatallshaw/fall_guys_ping_estimate
 API_URL = 'https://api.github.com/repos/notatallshaw/fall_guys_ping_estimate/commits?path=fgpe%2Fdata%2FFall_Guys_IP_Networks.csv'
 DATA_DIRECTORY = expandvars(r'%APPDATA%\fgpe')
 
+
 class Events:
     """
     This the main logic that is called by the GUIs event loop
     """
-    def __init__(self):
+    def __init__(self, exit_after_n_updates=None):
         self.reader = LogReader()
         self.stats = Stats()
         self.locations = LocationLookup()
         self.current_connection: Optional[ConnectionDetails] = None
         self.has_first_run = False
+        self.exit_on_n_updates = exit_after_n_updates
+        self.n_updates = 0
 
     def close(self, _) -> None:
         self.stats.end_session(self.current_connection)
@@ -133,6 +136,12 @@ class Events:
         """
         Return tuple of milliseconds till next update and string message to display
         """
+        # Check if need to exit
+        if self.exit_on_n_updates is not None:
+            self.n_updates += 1
+            if self.exit_on_n_updates >= self.n_updates:
+                raise GracefulExit(f'Exiting on {self.n_updates} updates')
+
         # Do a first run
         if not self.has_first_run:
             self.has_first_run = True
@@ -178,8 +187,8 @@ class Events:
         return (5_000, f'Region={location.region}, Location={location.location}, {self.stats.stats_string(connection)}')
 
 
-def run_events_forever():
-    events = Events()
+def run_overlay(exit_after_n_updates=None):
+    events = Events(exit_after_n_updates)
     overlay = Overlay(
         events.close,
         'Checking for IP address updates...',
@@ -202,7 +211,7 @@ def set_up_logs():
 
 def main():
     set_up_logs()
-    run_events_forever()
+    run_overlay()
 
 
 if __name__ == '__main__':
