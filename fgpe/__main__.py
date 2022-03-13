@@ -15,7 +15,7 @@ from tempfile import TemporaryDirectory
 import psutil
 import requests
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry # type: ignore
+from requests.packages.urllib3.util.retry import Retry  # type: ignore
 
 # Local Modules
 from .stats import Stats
@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 # Globals
 IP_URL = 'https://raw.githubusercontent.com/notatallshaw/fall_guys_ping_estimate/main/fgpe/data/Fall_Guys_IP_Networks.csv'
 API_URL = 'https://api.github.com/repos/notatallshaw/fall_guys_ping_estimate/commits?path=fgpe%2Fdata%2FFall_Guys_IP_Networks.csv'
-
+DATA_DIRECTORY = expandvars(r'%APPDATA%\fgpe')
 
 class Events:
     """
@@ -51,7 +51,7 @@ class Events:
         with requests.Session() as session:
             retries = Retry(total=5, backoff_factor=0.1, status_forcelist=[500, 502, 503, 504])
             session.mount('https://', HTTPAdapter(max_retries=retries))
-            
+
             # Get last commit time for comparison
             api_response = session.get(API_URL, timeout=10)
             api_response.raise_for_status()
@@ -137,7 +137,7 @@ class Events:
         if not self.has_first_run:
             self.has_first_run = True
             return 1_000, self.first_run()
-        
+
         # Check if Fall Guys is Running
         log_age = time.time() - os.path.getmtime(self.reader.log_location)
         if log_age > 30 * 60:
@@ -150,7 +150,7 @@ class Events:
             except Exception:
                 logger.exception('Unexpected exception checking for process')
                 return (500, 'Error checking Fall Guys Status')
-    
+
             if not process_result:
                 self._clear_connection()
                 return (10_000, 'Fall Guys Game is not Running')
@@ -178,7 +178,7 @@ class Events:
         return (5_000, f'Region={location.region}, Location={location.location}, {self.stats.stats_string(connection)}')
 
 
-def main():
+def run_events_forever():
     events = Events()
     overlay = Overlay(
         events.close,
@@ -188,14 +188,24 @@ def main():
         )
     overlay.run()
 
- 
-if __name__ == '__main__':
+
+def set_up_logs():
+    log_directory = Path(DATA_DIRECTORY)
+    log_directory.mkdir(parents=True, exist_ok=True)
+    error_log = log_directory / 'errors.log'
     logging.basicConfig(
-        filename=expandvars(r'%APPDATA%\fgpe\errors.log'),
-        level=logging.ERROR, 
-        format= '%(asctime)s - %(levelname)s - %(message)s',
+        filename=str(error_log),
+        level=logging.ERROR,
+        format='%(asctime)s - %(levelname)s - %(message)s',
     )
 
+
+def main():
+    set_up_logs()
+    run_events_forever()
+
+
+if __name__ == '__main__':
     try:
         main()
     except Exception:
