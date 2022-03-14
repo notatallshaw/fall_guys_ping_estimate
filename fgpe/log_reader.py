@@ -1,11 +1,12 @@
 import os
 from enum import Enum
-from typing import Optional
 from dataclasses import dataclass
+
 
 class ServerState(Enum):
     CONNECTED = 1
     NOT_CONNECTED = 2
+
 
 @dataclass(frozen=True)
 class ConnectionDetails:
@@ -27,11 +28,10 @@ class LogReader:
         self.log_mtime = None
         self.log_location = os.path.expandvars(r'%USERPROFILE%\AppData\LocalLow\Mediatonic\FallGuys_client\Player.log')
 
-        # Check file exists
-        if not os.path.exists(self.log_location):
-            raise ValueError(f'No log file at: {self.log_location}')
-    
     def log_updated(self) -> bool:
+        if not os.path.exists(self.log_location):
+            return False
+
         new_log_mtime = os.path.getmtime(self.log_location)
         updated = not (self.log_mtime == new_log_mtime)
         self.log_mtime = new_log_mtime
@@ -47,6 +47,9 @@ class LogReader:
         return changed
 
     def _update_ip_from_log_file(self) -> None:
+        if not os.path.exists(self.log_location):
+            return
+
         ip_address = self.current_ip
         port = self.current_port
 
@@ -64,16 +67,15 @@ class LogReader:
             self.current_ip = ip_address
             self.current_port = port
 
-    
     def get_connection_details(self) -> tuple[ServerState, ConnectionDetails]:
         if self.log_updated():
             if self.log_changed():
                 self.position = 0
             self._update_ip_from_log_file()
-        
+
         if self.current_ip == '0.0.0.0':
             self.current_server_state = ServerState.NOT_CONNECTED
         else:
             self.current_server_state = ServerState.CONNECTED
-        
+
         return self.current_server_state, ConnectionDetails(self.current_ip, self.current_port)
