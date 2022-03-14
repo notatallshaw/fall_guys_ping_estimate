@@ -22,7 +22,7 @@ class Pinger:
         else:
             self.ip_address = ip_address
             self.port = None
-    
+
     def get_ping_time(self) -> tuple[PingConnect, Optional[int]]:
         response = subprocess.run(
             ['ping', '-n', '1', '-w', '1000', self.ip_address],
@@ -33,7 +33,7 @@ class Pinger:
             )
         if response.returncode != 0:
             return PingConnect.NOT_CONNECTED, None
-        
+
         for line in response.stdout.splitlines():
             if 'Reply from' in line:
                 time_equals = line.strip().split()[4]
@@ -42,5 +42,5 @@ class Pinger:
                 break
         else:
             return PingConnect.NOT_CONNECTED, None
-        
+
         return PingConnect.CONNECTED, time

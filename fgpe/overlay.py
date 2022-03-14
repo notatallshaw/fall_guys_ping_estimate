@@ -1,6 +1,22 @@
 # Standard Library
+import sys
+import logging
 import tkinter as tk
 from typing import Callable, Any
+
+logger = logging.getLogger(__name__)
+
+
+def report_callback_exception(exc_type, val, tb):
+    if issubclass(exc_type, GracefulExit):
+        sys.exit(0)
+
+    logger.error('Exception occured, exiting:', exc_info=(exc_type, val, tb))
+    sys.exit(1)
+
+
+class GracefulExit(Exception):
+    "Allows callbacks to gracefully exit without logging error"
 
 
 class Overlay:
@@ -18,6 +34,7 @@ class Overlay:
         self.initial_delay = initial_delay
         self.get_new_text_callback = get_new_text_callback
         self.root = tk.Tk()
+        self.root.report_callback_exception = report_callback_exception
 
         # Set up Close Label
         self.close_label = tk.Label(
