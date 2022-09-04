@@ -5,8 +5,16 @@ Asia East,43.251.182.192/26,Taipei,Psychz Networks
 Asia East,172.107.246.0/24,Taipei,Psychz Networks
 Asia South,72.5.161.0/24,Singapore,Internap Corporation
 Asia South,107.6.118.0/23,Singapore,Voxel Hosting
-Australiia,137.59.254.64/26,Sydney,Performive
-Australiia,137.59.254.64/27,Sydney,Performive
+Australia,137.59.0.0/16,Sydney,Performive
+Australia,27.50.82.0/24,Melbourne,Servers Australia
+Australia,66.203.112.0/24,Sydney,Maxihost
+Australia,107.155.102.0/24,Sydney,HIVELOCITY
+Australia,117.20.0.0/16,Brisbane,ServerControl
+Australia,118.127.3.0/16,Brisbane,ServerControl
+Australia,180.92.196.0/24,Sydney,Servers Australia
+Australia,185.24.10.0/24,Sydney,DataCamp
+Australia,221.121.0.0/16,Sydney,Servers Australia
+Australia,223.252.60.0/24,Brisbane,Servers Australia
 Europe,198.20.114.0/23,Amsterdam,SingleHop LLC
 Europe,198.20.123.64/26,Amsterdam,SingleHop LLC
 Europe,107.6.143.0/24,Amsterdam,SingleHop LLC
@@ -26,6 +34,7 @@ Europe,109.169.0.0/18,UK,Iomart Cloud Services
 Europe,78.129.128.0/17,UK,Iomart Cloud Services
 Europe,88.150.230.160/28,UK,Redstation Limited
 Europe,88.150.230.184/29,London,Redstation Limited
+Europe,212.118.227.0/24,London,SingleHop
 Europe,212.78.94.0/24,UK,UK2.NET
 Europe,88.202.231.128/27,UK,UK2.NET
 Europe,134.119.220.0/24,Strasbourg,Host Europe GmbH
@@ -42,6 +51,9 @@ Korea,129.227.0.0/20,Seoul,Zenlayer
 Korea,129.227.0.0/21,Seoul,Zenlayer
 Korea,129.227.0.0/22,Seoul,Zenlayer
 Korea,129.227.0.0/23,Seoul,Zenlayer
+Netherlands,169.150.223.0/24,Amsterdam,DataCamp
+Netherlands,185.254.68.0/24,Amsterdam,Performive
+Singapore,156.59.0.0/16,Singapore,ZenLayer
 South America,172.107.193.0/24,Brazil,Psychz Networks
 South America,172.106.0.0/15,São Paulo,Psychz Networks
 South America,35.198.0.0/19,São Paulo,Google Cloud
