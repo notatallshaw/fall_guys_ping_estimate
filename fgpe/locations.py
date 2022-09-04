@@ -49,19 +49,19 @@ class LocationLookup:
             return self._ip_network_lookup
 
         ip_network_lookup = {}
-        with open(self.csv_file_path) as f:
+        with open(self.csv_file_path, encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ip_network_lookup[ip_network(row['IP Network'])] = \
                     FallGuysLocation(row['Fall Guys Region'], row['Location'], row['Provider'])
-        
+
         self._ip_network_lookup = ip_network_lookup
         return self._ip_network_lookup
 
     def clear_ip_network_lookup_cache(self) -> None:
         self._ip_network_lookup = None
 
-    @cache    
+    @cache
     def lookup(self, ip_str: str, record_unknown: bool = True) -> FallGuysLocation:
         ip_addr = ip_address(ip_str)
         for network, location in self.ip_network_lookup.items():
