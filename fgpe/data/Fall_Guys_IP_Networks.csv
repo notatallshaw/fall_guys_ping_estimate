@@ -10,7 +10,7 @@ Australia,27.50.82.0/24,Melbourne,Servers Australia
 Australia,66.203.112.0/24,Sydney,Maxihost
 Australia,107.155.102.0/24,Sydney,HIVELOCITY
 Australia,117.20.0.0/16,Brisbane,ServerControl
-Australia,118.127.3.0/16,Brisbane,ServerControl
+Australia,118.127.0.0/16,Brisbane,ServerControl
 Australia,180.92.196.0/24,Sydney,Servers Australia
 Australia,185.24.10.0/24,Sydney,DataCamp
 Australia,221.121.0.0/16,Sydney,Servers Australia
