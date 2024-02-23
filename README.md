@@ -22,6 +22,22 @@ You can find statistics of all your Fall Guys sessions by opening File Explorer 
 
 In here you will find a file named `stats.csv` which you can open with Excel or import in to Google Sheets or many other tools / programming languages
 
+## Install the GeoIP Database
+
+There is now an option to use an IP database to lookup the server location dynamically. This database must be installed manually after registering for a free account.
+
+1. Go to https://dev.maxmind.com/geoip/geolite2-free-geolocation-data
+1. Click "Signup for GeoLite2" (It is a free account)
+2. Login to your account
+3. Click on "Download Databases" or "Download Files"
+4. In the "GeoLite2 City" section with format:
+GeoIP2 Binary (.mmdb), click "Download GZIP"
+5. Decompress the downloaded file. You might need a tool like [7-zip](https://www.7-zip.org/) to decompress it
+6. Decompress the .tar file
+7. You should have a folder with a `GeoLite2-City.mmdb` file in it. 
+8. Copy `GeoLite2-City.mmdb` into `%APPDATA%\fgpe\` which should be like `C:\Users\your_user_name\AppData\Roaming\fgpe`
+9. Restart Fall Guys Ping Estimate
+
 ## Report Unknown Region / Location
 
 Because the region and location is built manually there will likely be many ip addresses where the region and location are not known. When this happens you will see the IP address displayed instead of the region and locations.
@@ -69,7 +85,7 @@ python -m pip install pyinstaller
 Build the installer (will create an exe at dist\run_fgpe.exe):
 
 ```
-pyinstaller installer\run_fgpe.py --clean --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile --icon installer\fall_guy.ico
+python -m PyInstaller installer\run_fgpe.py --clean --add-data "fgpe/data/*;fgpe/data" --noconsole --onefile --icon installer\fall_guy.ico
 ```
 
 
