@@ -7,7 +7,7 @@ from typing import NamedTuple
 from datetime import datetime
 from os.path import expandvars, exists
 from ipaddress import ip_address, ip_network, _BaseNetwork
-
+import geoip2.database
 
 class FallGuysLocation(NamedTuple):
     region: str
@@ -30,6 +30,9 @@ class LocationLookup:
         self._backup_csv_file: Path = importlib.resources.files('fgpe') / 'data' / 'Fall_Guys_IP_Networks.csv'
         self.download_csv_file_path = Path(expandvars(r'%APPDATA%\fgpe\Fall_Guys_IP_Networks.csv'))
         self._ip_network_lookup = None
+
+        self.geoip_path = Path(expandvars(r'%APPDATA%\fgpe\GeoLite2-City.mmdb'))
+        self._use_geoip = self.geoip_path.exists()
 
         # Check unknown IP address CSV exists
         self.unknown_ip_path = Path(expandvars(r'%APPDATA%\fgpe\unknown_ip_addresses.csv'))
@@ -64,6 +67,14 @@ class LocationLookup:
     @cache
     def lookup(self, ip_str: str, record_unknown: bool = True) -> FallGuysLocation:
         ip_addr = ip_address(ip_str)
+        if self._use_geoip:
+            with geoip2.database.Reader(self.geoip_path) as reader:
+                try:
+                    geoip_response = reader.city(ip_addr)
+                    return FallGuysLocation(geoip_response.country.name, geoip_response.city.name, 'Unknown')
+                except geoip2.errors.AddressNotFoundError:
+                    return UNKNOWN_LOCATION
+
         for network, location in self.ip_network_lookup.items():
             if ip_addr in network:
                 return location
